@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Артем Юдичев</title>
+    <meta charset="utf-8">
+</head>
+<h1>Ответ:</h1>
+<body>
+    <script type="text/javascript">
+        //функция для создания массива пользователем
+        function newMas(){
+            var n = Number(prompt("Введите количество элементов:"));
+            var nMas = [];
+            for(var i=0; i<n; i++){
+                nMas[i]=Number(prompt("Введите число:"));
+            }
+            return nMas;
+        }
+
+        //функция для поиска индекса минимального элемента
+        function findMinInd(mas){
+            var min=0;
+            for(var i=1; i<mas.length; i++){
+                if(mas[i]<mas[min]){
+                    min=i;
+                }
+            }
+            return min;
+        }
+
+        //функция для сортировки массива по возрастанию
+        function compareNumeric(a, b) {
+            if (a > b) return 1;
+            if (a == b) return 0;
+            if (a < b) return -1;
+        }
+
+        var myArray = newMas();
+
+        //Произведение положительных элементов массива
+        var proizv = 1;
+        for(var i=0; i<myArray.length; i++){
+            if(myArray[i]>0){
+                proizv*=myArray[i];
+            }
+        }
+
+        //Сумма элементов массива, расположенных до минимального элемента
+
+        var IndMin = findMinInd(myArray);
+        var sumEl = 0;
+        for(var m=0; m<IndMin; m++){
+            sumEl+=myArray[m];
+        }
+
+        //Массив, где сначала упорядочены нечетные числа, а потом четные
+        myArray.sort(compareNumeric);
+        var Arr1=[];
+        var Arr2=[];
+        for(var l=0; l<myArray.length; l++){
+            if(myArray[l]%2==1){
+                Arr1.push(myArray[l]);
+            }
+            else{
+                Arr2.push(myArray[l]);
+            }
+        }
+        myArr = Arr1.concat(Arr2);
+        var str = myArr.join("; ")
+
+        document.writeln("Произведение положительных элементов массива: "+proizv+"; Сумма элементов массива, расположенных до минимального элемента: "+sumEl+"; Массив, где сначала упорядочены нечетные числа, а потом четные: "+str);
+    </script>
+</body>
+</html>
