@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Артем Юдичев</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript">
+        var x = Number(prompt("Введите x:"));
+        var y = Number(prompt("Введите y:"));
+        var z = Number(prompt("Введите z:"));
+        function Tochka(x, y, z){
+            this.x=x;
+            this.y=y;
+            this.z=z;
+            this.LengthV=function(){
+                var len = ((this.x**2)+(this.y**2)+(this.z**2))**(1/2);
+                document.write("Длина вектора = "+len);
+            }
+        }
+        var vec = new Tochka(x, y, z);
+        vec.LengthV();
+    </script>
+</body>
+</html>
