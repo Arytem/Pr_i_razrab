@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Артем Юдичев</title>
+    <meta charset="utf-8">
+</head>
+<body style='background-color: white; color: black' class = "myBody">
+<h1>Лабораторная работа 8</h1>
+<p>В этом задании необходимо было написать js код, чтобы программа запрашивала у пользователя цвет фона, цвет текста и ссылку, кстати <a href="https://www.google.ru/" class="myA">ссылка вот</a>, а потом заменяла цвет фона, цвет текста и ссылку, имеющуяся на сайте на введенные пользователем.</p>
+    <script type="text/javascript">
+        var a = prompt("Введите цвет фона:");
+        var b = prompt("Введите цвет текста:");
+        var c = prompt("Введите ссылку");
+        var bodyU = document.querySelector("body.myBody");
+        bodyU.setAttribute("style", `background-color:${a}`);
+        var root = document.documentElement;
+        root.style.color = b;
+        var ancor = document.querySelector("a.myA");
+        ancor.setAttribute("href", `${c}`);
+    </script>
+</body>
+</html>
